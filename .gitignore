@@ -1,0 +1,7 @@
+﻿/packages/
+/WpfTest/react-webview-ui/node_modules/
+/WpfTest/react-webview-ui/dist/
+/.idea/
+/WpfTest/obj/
+/WpfTest/bin/
+/WpfTest/react-webview-ui/package-lock.json

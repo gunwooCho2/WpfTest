@@ -1,0 +1,52 @@
+﻿.main-container
+  display: flex
+  flex-direction: column
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  background-color: #f0f0f0 // 전체 배경색
+
+  // 상단, 하단 영역
+  .top-panel, .bottom-panel
+    background-color: #ddd
+    overflow: hidden
+
+  // 중간 영역 (좌 + 중앙 + 우)
+  .middle-wrapper
+    display: flex
+    flex: 1
+    flex-direction: row
+    overflow: hidden
+    min-height: 0 // Flex 자식의 overflow 처리를 위해 필수
+
+    .left-panel, .right-panel
+      background-color: #e0e0e0
+      overflow: hidden
+
+    // 중앙 MainView 영역
+    .center-panel
+      flex: 1
+      background-color: transparent // WPF 뷰가 보여야 하므로 투명 또는 비워둠
+      position: relative
+      overflow: hidden
+
+  // 리사이저 (드래그 핸들) 공통 스타일
+  .resizer
+    z-index: 10
+    background-color: #ccc
+    transition: background-color 0.2s
+
+    &:hover, &.active
+      background-color: #007acc // 활성화 시 강조색
+
+    // 수평 리사이저 (상/하 조절)
+    &.horizontal
+      height: 5px
+      cursor: row-resize
+      width: 100%
+
+    // 수직 리사이저 (좌/우 조절)
+    &.vertical
+      width: 5px
+      cursor: col-resize
+      height: 100%
